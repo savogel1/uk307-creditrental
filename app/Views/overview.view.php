@@ -23,12 +23,15 @@
                     <td><?= $creditrental['noOfInstallments'] ?></td>
                     <td><?= $creditrental['creditPackage'] ?></td>
                     <td><?= $creditrental['creationDate'] ?></td>
-                    <td id="button">
+                    <td id="table-button">
                         <a href="editcredit?id=<?= $creditrental['id'] ?>"><button>Bearbeiten</button></a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
             </table>
+        </div>
+        <div id="buttons">
+            <a href="addcredit"><button>Kreditverleih hinzufügen</button></a>
         </div>
     </div>
 </body>
