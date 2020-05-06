@@ -1,3 +1,10 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 table {
   border: 0;
   border-collapse: collapse;
@@ -6,4 +13,21 @@ table {
 td {
   padding: 5px;
   border: 1px solid #aaa;
+}
+
+#button {
+  border: 1px solid white;
+}
+
+#title {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+#overview-table {
+  /* align-self: flex-end; */
+}
+
+.item {
+  align-self: auto;
 }
