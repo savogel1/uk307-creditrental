@@ -20,12 +20,18 @@ td {
 }
 
 #title {
+  display: flex;
   margin-top: 50px;
   margin-bottom: 20px;
 }
 
-#overview-table {
-  /* align-self: flex-end; */
+#inline-header {
+  display: inline;
+  margin-right: 30px;
+}
+
+#inline-header-button {
+  align-self: center;
 }
 
 .item {

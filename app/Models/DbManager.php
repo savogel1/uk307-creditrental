@@ -23,6 +23,15 @@ class DbManager
         return $statement->fetchAll();
     }
 
+    public function getById(int $id)
+    {
+        $statement = $this->db->prepare('SELECT * FROM creditrental WHERE id = :id');
+        $statement->bindParam(':id', $id, PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
+
     public function addRental($name, $email, $phone, $noOfInstallments, $creditPackage)
     {
         $statement = $this->db->prepare("INSERT INTO `creditrental` (`id`, `name`, `email`, `phone`, `noOfInstallments`, `creditPackage`, `creationDate`) VALUES (NULL, :name, :email, :phone, :noOfInstallments, :creditPackage, :date);");
