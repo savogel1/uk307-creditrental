@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"] ?? "";
     $email = $_POST["email"] ?? "";
     $phone = $_POST["phone"] ?? "";
-    $creditPackage = $_POST["creditPackage"] ?? "";
+    $creditPackage = $_POST["package"] ?? "";
     $status = $_POST["status"] ?? "";
 
     $requiredFields = [
@@ -18,8 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "app/Controllers/ValidationController.php";
 
     if ($errors == []) {
-        $dbManager->updateRental($id, $name, $email, $phone, $creditPackage, $status);
+        $dbManager->updateRental($_GET["id"], $name, $email, $phone, $creditPackage, $status);
+        header("location: credits");
     } else {
-        require "app/Controllers/AddCreditController.php";
+        var_dump($errors);
+        require "app/Controllers/EditCreditController.php";
     }
 }

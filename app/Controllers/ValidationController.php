@@ -1,7 +1,7 @@
 <?
 $errors = [];
-foreach ($requiredFields as $field => $name) {
-    if ($field == "") {
+foreach ($requiredFields as $description => $field) {
+    if ($description == "") {
         $errors[] = $name . " darf nicht leer sein";
     }
 }
@@ -14,15 +14,14 @@ if ($phone != "" && isInvalidPhoneNumber($phone)) {
 }
 
 if ($creditPackage != "" && $creditPackage < 1 || $creditPackage > 40) {
-    $errors[] = "Ungültiges Kreditpaket" . $creditPackage;
+    $errors[] = "Ungültiges Kreditpaket " . $creditPackage;
 }
 
-if (isset($noOfInstallments) && $noOfInstallments != "" && $noOfInstallments < 1 || $noOfInstallments > 10) {
+if (isset($noOfInstallments) && $noOfInstallments != "" && ($noOfInstallments < 1 || $noOfInstallments > 10)) {
     $errors[] = "Die Anzahl Raten muss zwischen 1 und 10 liegen";
 }
 
-if (isset($status) && $status != "" && !($status == "Das Geld ist noch ausgeliehen und wird in Raten
-zurückbezahlt." || $status == "Das Geld wurde vollständig zurückbezahlt.")) {
+if (isset($status) && $status != "" && !($status == "0" || $status == "1")) {
     $errors[] = "Der Verleihstatus ist ungültig";
 }
 

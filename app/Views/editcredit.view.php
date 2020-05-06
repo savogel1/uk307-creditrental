@@ -16,7 +16,7 @@
         </div>
 
         <div class="item">
-            <form action="updatecredit" method="post">
+            <form action="updatecredit?id=<?= $_GET["id"]; ?>" method="POST">
                 <fieldset>
                     <legend>Kunde</legend>
                     <label for="name">Name</label>
@@ -30,19 +30,20 @@
                     <legend>Kredit</legend>
                     <label for="package">Kreditpaket</label>
                     <select name="package">
-                        <?php foreach($creditPackages as $creditPackage) : ?>
-                        <option value="<?= $creditPackage['name'] ?>"
-                            <?php if($creditPackage['id'] == $credit['creditPackage']) { echo "selected"; } ?>>
-                            <?= $creditPackage['name'] ?>
-                        </option>
+                        <?php foreach ($creditPackages as $creditPackage) : ?>
+                            <option value="<?= $creditPackage['id'] ?>" <?php if ($creditPackage['id'] == $credit['creditPackage']) {
+                                                                            echo "selected";
+                                                                        } ?>>
+                                <?= $creditPackage['name'] ?>
+                            </option>
                         <?php endforeach; ?>
                     </select>
                     <br>
                     <label for="status">Verleihstatus</label>
                     <select name="status">
-                        <option value="<?= $credit['status'] ?>">Das Geld ist noch ausgeliehen und wird in Raten
+                        <option value="0">Das Geld ist noch ausgeliehen und wird in Raten
                             zurückbezahlt.</option>
-                        <option value="<?= $credit['status'] ?>">Das Geld wurde vollständig zurückbezahlt.</option>
+                        <option value="1">Das Geld wurde vollständig zurückbezahlt.</option>
                     </select>
                 </fieldset>
                 <input type="submit" value="Ändern">

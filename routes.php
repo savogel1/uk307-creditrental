@@ -8,4 +8,5 @@ $router->define([
     'addcredit' => 'app/Controllers/AddCreditController.php',
     'editcredit' => 'app/Controllers/EditCreditController.php',
     'insertcredit' => 'app/Controllers/InsertCreditController.php',
+    'updatecredit' => 'app/Controllers/UpdateCreditController.php',
 ]);
