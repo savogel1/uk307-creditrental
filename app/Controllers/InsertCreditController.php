@@ -15,27 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "Kreditpaket" => $creditPackage
     ];
 
-    foreach ($requiredFields as $field => $name) {
-        if ($field == "") {
-            $errors[] = $name . " darf nicht leer sein";
-        }
-    }
-
-    if ($email != "" && strpos($email, "@") === false) {
-        $errors[] = "Ungültige E-Mail-Adresse";
-    }
-
-    if ($phone != "" && isInvalidPhoneNumber($phone)) {
-        $errors[] = "Ungültige Telefonnummer";
-    }
-
-    if ($creditPackage != "" && $creditPackage < 1 || $creditPackage > 40) {
-        $errors[] = "Ungültiges Kreditpaket" . $creditPackage;
-    }
-
-    if ($noOfInstallments != "" && $noOfInstallments < 1 || $noOfInstallments > 10) {
-        $errors[] = "Die Anzahl Raten muss zwischen 1 und 10 liegen";
-    }
+    require "app/Controllers/ValidationController.php";
 
     if ($errors == []) {
         $dbManager->addRental($name, $email, $phone, $noOfInstallments, $creditPackage);
