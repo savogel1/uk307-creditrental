@@ -8,6 +8,14 @@
 </head>
 
 <body>
+    <?php if (count($errors) > 0) : ?>
+        <!-- Errors, Teil 1 -->
+        <ul class="text-monospace text-danger">
+            <?php foreach ($errors as $error) : ?>
+                <li><?= $error ?></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
     <form action="insertcredit" method="POST">
         <fieldset>
             <legend>Kunde</legend>
@@ -34,7 +42,7 @@
             <select name="creditPackage" id="creditPackage" required>
                 <? foreach ($creditPackages as $nr => $creditPackage) {
                     var_dump($nr);
-                    echo "<option value=\"$nr\">" . $creditPackage["name"] . "</option>";
+                    echo "<option value=\"" . $creditPackage["id"] . "\">" . $creditPackage["name"] . "</option>";
                 }
                 ?>
             </select>
