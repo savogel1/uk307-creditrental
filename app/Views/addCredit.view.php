@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="app/Controllers/insertRentalController.php" mehtod="POST">
+    <form action="insertcredit" method="POST">
         <fieldset>
             <legend>Kunde</legend>
             <label for="name">Name*</label>
