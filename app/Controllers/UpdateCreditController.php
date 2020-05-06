@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dbManager->updateRental($_GET["id"], $name, $email, $phone, $creditPackage, $status);
         header("location: credits");
     } else {
-        var_dump($errors);
         require "app/Controllers/EditCreditController.php";
     }
 }
