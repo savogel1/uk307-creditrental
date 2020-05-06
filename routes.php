@@ -5,4 +5,5 @@ $router = new Router();
 $router->define([
     '' => 'app/Controllers/OverviewController.php',
     'credits' => 'app/Controllers/OverviewController.php',
+    'addRental' => 'app/Controllers/AddRentalController.php',
 ]);
