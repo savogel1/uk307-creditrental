@@ -12,22 +12,22 @@
         <fieldset>
             <legend>Kunde</legend>
             <label for="name">Name*</label>
-            <input type="text" id="name" name="name" required <? if (isset($_POST["name"])) {
+            <input type="text" id="name" name="name" required <?php if (isset($_POST["name"])) {
                                                                     echo "value=\"" . $_POST["name"] . "\"";
                                                                 } ?>><br>
             <label for="email">E-Mail*</label>
-            <input type="email" name="email" id="email" required <? if (isset($_POST["email"])) {
+            <input type="email" name="email" id="email" required <?php if (isset($_POST["email"])) {
                                                                         echo "value=\"" . $_POST["email"] . "\"";
                                                                     } ?>><br>
             <label for="phone">Telefonnummer</label>
-            <input type="text" name="phone" id="phone" <? if (isset($_POST["phone"])) {
+            <input type="text" name="phone" id="phone" <?php if (isset($_POST["phone"])) {
                                                             echo "value=\"" . $_POST["phone"] . "\"";
                                                         } ?>>
         </fieldset>
         <fieldset>
             <legend>Kredit</legend>
             <label for="noOfInstallments">Anzahl Raten*</label>
-            <input type="number" name="noOfInstallments" id="noOfInstallments" required <? if (isset($_POST["noOfInstallments"])) {
+            <input type="number" name="noOfInstallments" id="noOfInstallments" required <?php if (isset($_POST["noOfInstallments"])) {
                                                                                             echo "value=\"" . $_POST["noOfInstallments"] . "\"";
                                                                                         } ?>><br>
             <label for="creditPackage">Kreditpaket*</label>
