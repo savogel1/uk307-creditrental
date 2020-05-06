@@ -1,5 +1,6 @@
 <?php
 
-$creditrental = "Das wird eine Liste";
+$db = new DbManager();
+$creditrentals = $db->getAll();
 
 require 'app/Views/overview.view.php';
