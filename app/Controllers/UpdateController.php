@@ -4,21 +4,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"] ?? "";
     $email = $_POST["email"] ?? "";
     $phone = $_POST["phone"] ?? "";
-    $noOfInstallments = $_POST["noOfInstallments"] ?? "";
     $creditPackage = $_POST["creditPackage"] ?? "";
+    $status = $_POST["status"] ?? "";
 
     $requiredFields = [
         "Name" => $name,
         "E-Mail" => $email,
         "Telefonnummer" => $phone,
-        "Anzahl Raten" => $noOfInstallments,
+        "Verleihstatus" => $status,
         "Kreditpaket" => $creditPackage
     ];
 
     require "app/Controllers/ValidationController.php";
 
     if ($errors == []) {
-        $dbManager->addRental($name, $email, $phone, $noOfInstallments, $creditPackage);
+        $dbManager->updateRental($id, $name, $email, $phone, $creditPackage, $status);
     } else {
         require "app/Controllers/AddCreditController.php";
     }
