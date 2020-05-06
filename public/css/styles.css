@@ -1,8 +1,6 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+html,
+body {
+  background-color: rgb(170, 170, 170);
 }
 
 table {
@@ -15,7 +13,13 @@ td {
   border: 1px solid #aaa;
 }
 
-#button {
+button {
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(219, 219, 219);
+}
+
+#table-button {
   border: 1px solid white;
 }
 
@@ -32,6 +36,23 @@ td {
 
 #inline-header-button {
   align-self: center;
+}
+
+#buttons {
+  margin-top: 40px;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  margin-bottom: 0;
+  padding: 20% 5%;
+  padding-top: 0%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
 }
 
 .item {
