@@ -29,7 +29,7 @@ if (isset($status) && $status != "" && !($status == "0" || $status == "1")) {
 function isInvalidPhoneNumber($phone)
 {
     foreach (str_split($phone) as $character) {
-        if (!in_array($character, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "(", ")", "+", "-", " "])) {
+        if (!in_array($character, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "(", ")", "+", "-", " ", "/"])) {
             return true;
         }
     }
