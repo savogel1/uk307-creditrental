@@ -27,7 +27,7 @@
                     <tr>
                         <td><?= $creditrental['name'] ?></td>
                         <td><?= $creditrental['email'] ?></td>
-                        <td><?= $creditPackages[$creditrental['creditPackage']]["name"]; ?></td>
+                        <td><?= $creditPackages[$creditrental['creditPackage'] - 1]["name"]; ?></td>
                         <td><?= $creditrental['creationDate'] ?></td>
                         <td><?= $dueDate = date('Y-m-d', strtotime($creditrental['creationDate'] . " + " . ($creditrental['noOfInstallments'] * 15) . " days"));
                             ?></td>

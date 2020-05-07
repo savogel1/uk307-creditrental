@@ -49,16 +49,13 @@ class DbManager
 
     function updateRental($id, $name, $email, $phone, $creditPackage, $status)
     {
-        $status = "Das Geld ist noch ausgeliehen und wird in Raten
-        zurückbezahlt." ? 1 : 0;
-
         $statement = $this->db->prepare("UPDATE `creditrental` SET `name` = :name, `email` = :email, `phone` = :phone, `creditPackage` = :creditPackage, `status` = :status WHERE `creditrental`.`id` = :id;");
 
         $statement->bindParam(":name", $name, PDO::PARAM_STR);
         $statement->bindParam(":email", $email, PDO::PARAM_STR);
         $statement->bindParam(":phone", $phone, PDO::PARAM_STR);
         $statement->bindParam(":creditPackage", $creditPackage, PDO::PARAM_INT);
-        $statement->bindParam(":status", $status, PDO::PARAM_INT);
+        $statement->bindParam(":status",  $status, PDO::PARAM_INT);
         $statement->bindParam(":id", $id, PDO::PARAM_INT);
 
         $statement->execute();
