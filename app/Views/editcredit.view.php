@@ -31,11 +31,11 @@
                     <label for="package">Kreditpaket</label>
                     <select name="package">
                         <?php foreach ($creditPackages as $creditPackage) : ?>
-                            <option value="<?= $creditPackage['id'] ?>" <?php if ($creditPackage['id'] == $credit['creditPackage']) {
+                        <option value="<?= $creditPackage['id'] ?>" <?php if ($creditPackage['id'] == $credit['creditPackage']) {
                                                                             echo "selected";
                                                                         } ?>>
-                                <?= $creditPackage['name'] ?>
-                            </option>
+                            <?= $creditPackage['name'] ?>
+                        </option>
                         <?php endforeach; ?>
                     </select>
                     <br>

@@ -1,11 +1,11 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
-    $name = $_POST["name"] ?? "";
-    $email = $_POST["email"] ?? "";
-    $phone = $_POST["phone"] ?? "";
-    $noOfInstallments = $_POST["noOfInstallments"] ?? "";
-    $creditPackage = $_POST["creditPackage"] ?? "";
+    $name = htmlspecialchars($_POST["name"]) ?? "";
+    $email = htmlspecialchars($_POST["email"]) ?? "";
+    $phone = htmlspecialchars($_POST["phone"]) ?? "";
+    $noOfInstallments = htmlspecialchars($_POST["noOfInstallments"]) ?? "";
+    $creditPackage = htmlspecialchars($_POST["creditPackage"]) ?? "";
 
     $requiredFields = [
         "Name" => $name,
