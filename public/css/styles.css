@@ -5,12 +5,6 @@ html {
   background-color: rgb(170, 170, 170);
 }
 
-footer {
-  height: 15%;
-  width: 100%;
-  align-self: flex-end;
-}
-
 nav {
   height: 10%;
   width: 100%;
@@ -59,7 +53,7 @@ button {
 
 .container {
   display: flex;
-  height: 75%;
+  height: 80%;
   padding: 3%;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   justify-content: flex-start;
@@ -71,24 +65,13 @@ button {
 .item {
   align-self: auto;
   color: black;
+  justify-self: center;
 }
 
 .input-button {
   border: 0;
   border-radius: 5px;
   background-color: rgb(219, 219, 219);
-}
-
-.footer-div {
-  height: 100%;
-  width: 100%;
-  background-color: rgb(230, 230, 230);
-  padding: 3%;
-  align-self: flex-end;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .nav-div {

@@ -59,12 +59,6 @@
             <a href="addcredit"><button>Kreditverleih hinzufügen</button></a>
         </div>
     </div>
-    <footer>
-        <div class="footer-div">
-            <p class="item">Firma: Kredihay</p>
-            <p class="item">Projektarbeit von Tim Barmettler & Sacha Vogel</p>
-        </div>
-    </footer>
 </body>
 
 
