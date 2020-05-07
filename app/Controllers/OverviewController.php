@@ -1,7 +1,7 @@
 <?php
 
 $db = new DbManager();
-$creditrentals = $db->getAll();
+$creditrentals = $db->getUnpaidCredits();
 $creditPackages = $db->getCreditPackages();
 
 require 'app/Views/overview.view.php';
