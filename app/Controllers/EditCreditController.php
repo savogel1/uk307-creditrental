@@ -3,6 +3,7 @@
 $db = new DbManager();
 $creditPackages = $db->getCreditPackages();
 $id = $_GET['id'];
+$id = (int)$id;
 
 
 try {
