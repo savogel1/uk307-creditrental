@@ -28,6 +28,14 @@ button {
   background-color: rgb(219, 219, 219);
 }
 
+label {
+  width: 120px;
+}
+
+select {
+  width: 300px;
+}
+
 #table-button {
   border: 1px solid white;
 }
