@@ -15,18 +15,33 @@
         </div>
         <div id="overview-table" class="item">
             <table>
-                <?php foreach($creditrentals as $creditrental) : ?>
                 <tr>
-                    <td><?= $creditrental['name'] ?></td>
-                    <td><?= $creditrental['email'] ?></td>
-                    <td><?= $creditrental['phone'] ?></td>
-                    <td><?= $creditrental['noOfInstallments'] ?></td>
-                    <td><?= $creditrental['creditPackage'] ?></td>
-                    <td><?= $creditrental['creationDate'] ?></td>
-                    <td id="table-button">
-                        <a href="editcredit?id=<?= $creditrental['id'] ?>"><button>Bearbeiten</button></a>
-                    </td>
+                    <th>Name</th>
+                    <th>E-Mail</th>
+                    <th>Kreditpaket</th>
+                    <th>Erfassungsdatum</th>
+                    <th>Rückzahlung bis</th>
+                    <th>Status</th>
                 </tr>
+                <?php foreach ($creditrentals as $creditrental) : ?>
+                    <tr>
+                        <td><?= $creditrental['name'] ?></td>
+                        <td><?= $creditrental['email'] ?></td>
+                        <td><?= $creditPackages[$creditrental['creditPackage']]["name"]; ?></td>
+                        <td><?= $creditrental['creationDate'] ?></td>
+                        <td><?= $dueDate = date('Y-m-d', strtotime($creditrental['creationDate'] . " + " . ($creditrental['noOfInstallments'] * 15) . " days"));
+                            ?></td>
+                        <td>
+                            <?php if ($dueDate > date("Y-m-d")) {
+                                echo "<g-emoji class=\"g-emoji\" alias=\"sun_with_face\" fallback-src=\"https://github.githubassets.com/images/icons/emoji/unicode/1f31e.png\">🌞</g-emoji>";
+                            } else {
+                                echo "<g-emoji class=\"g-emoji\" alias=\"zap\" fallback-src=\"https://github.githubassets.com/images/icons/emoji/unicode/26a1.png\">⚡</g-emoji>";;
+                            } ?>
+                        </td>
+                        <td id="table-button">
+                            <a href="editcredit?id=<?= $creditrental['id'] ?>"><button>Bearbeiten</button></a>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
             </table>
         </div>
