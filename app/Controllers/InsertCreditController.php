@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($errors == []) {
         $dbManager->addRental($name, $email, $phone, $noOfInstallments, $creditPackage);
+        header("location: credits");
     } else {
         require "app/Controllers/AddCreditController.php";
     }
