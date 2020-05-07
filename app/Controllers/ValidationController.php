@@ -1,8 +1,8 @@
 <?php
 $errors = [];
 foreach ($requiredFields as $description => $field) {
-    if ($description == "") {
-        $errors[] = $name . " darf nicht leer sein";
+    if ($field == "") {
+        $errors[] = $description . " darf nicht leer sein";
     }
 }
 if ($email != "" && strpos($email, "@") === false) {

@@ -24,7 +24,16 @@
             <h1 id="inline-header">Kreditverleih bearbeiten</h1>
             <a href="credits" id="inline-header-button"><button>Abbrechen</button></a>
         </div>
-
+        <?php if (isset($errors) && count($errors) > 0) : ?>
+            <!-- Errors, Teil 1 -->
+            <div class="item">
+                <ul class="text-monospace text-danger">
+                    <?php foreach ($errors as $error) : ?>
+                        <li><?= $error ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
         <div class="item">
             <form action="updatecredit?id=<?= $_GET["id"]; ?>" method="POST">
                 <fieldset>
@@ -41,11 +50,11 @@
                     <label for="package">Kreditpaket</label>
                     <select name="package">
                         <?php foreach ($creditPackages as $creditPackage) : ?>
-                        <option value="<?= $creditPackage['id'] ?>" <?php if ($creditPackage['id'] == $credit['creditPackage']) {
+                            <option value="<?= $creditPackage['id'] ?>" <?php if ($creditPackage['id'] == $credit['creditPackage']) {
                                                                             echo "selected";
                                                                         } ?>>
-                            <?= $creditPackage['name'] ?>
-                        </option>
+                                <?= $creditPackage['name'] ?>
+                            </option>
                         <?php endforeach; ?>
                     </select>
                     <br>

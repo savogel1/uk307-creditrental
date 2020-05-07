@@ -10,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $requiredFields = [
         "Name" => $name,
         "E-Mail" => $email,
-        "Telefonnummer" => $phone,
         "Anzahl Raten" => $noOfInstallments,
         "Kreditpaket" => $creditPackage
     ];
