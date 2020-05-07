@@ -11,7 +11,7 @@ class DbManager
 
     public function getUnpaidCredits()
     {
-        $statement = $this->db->prepare('SELECT * FROM creditrental WHERE status = 0');
+        $statement = $this->db->prepare('SELECT * FROM creditrental WHERE status = 0 ORDER BY creationDate');
         $statement->execute();
         return $statement->fetchAll();
     }
