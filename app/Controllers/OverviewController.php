@@ -1,14 +1,8 @@
 <?php
 
 $db = new DbManager();
-$creditrentals = $db->getAll();
+$creditrentals = $db->getUnpaidCredits();
 $creditPackages = $db->getCreditPackages();
-
-foreach ($creditrentals as $nr => $credit) {
-    if ($credit["status"] === "1") {
-        unset($creditrentals[$nr]);
-    }
-}
 
 function cmp($a, $b)
 {

@@ -9,9 +9,9 @@ class DbManager
         $this->db = connectToDatabase();
     }
 
-    public function getAll()
+    public function getUnpaidCredits()
     {
-        $statement = $this->db->prepare('SELECT * FROM creditrental');
+        $statement = $this->db->prepare('SELECT * FROM creditrental WHERE status = 0');
         $statement->execute();
         return $statement->fetchAll();
     }
