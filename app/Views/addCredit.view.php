@@ -58,8 +58,8 @@
                     </select>
                 </fieldset>
                 <div class="buttons">
-                    <input type="submit" value="Erfassen">
-                    <input type="reset" value="Zurücksetzen">
+                    <input class="input-button" type="submit" value="Erfassen">
+                    <input class="input-button" type="reset" value="Zurücksetzen">
                 </div>
             </form>
         </div>
