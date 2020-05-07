@@ -9,6 +9,16 @@
 </head>
 
 <body>
+
+    <nav>
+        <div class="nav-div">
+            <div class="nav-menu">
+                <a id="current-tab" class="item" href="credits">Übersicht</a>
+                <a class="item" href="addcredit">Hinzufügen</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <div id="title" class="item">
             <h1>Kreditverleihe Übersicht</h1>
@@ -24,24 +34,24 @@
                     <th>Status</th>
                 </tr>
                 <?php foreach ($creditrentals as $creditrental) : ?>
-                    <tr>
-                        <td><?= $creditrental['name'] ?></td>
-                        <td><?= $creditrental['email'] ?></td>
-                        <td><?= $creditPackages[$creditrental['creditPackage'] - 1]["name"]; ?></td>
-                        <td><?= $creditrental['creationDate'] ?></td>
-                        <td><?= $dueDate = date('Y-m-d', strtotime($creditrental['creationDate'] . " + " . ($creditrental['noOfInstallments'] * 15) . " days"));
+                <tr>
+                    <td><?= $creditrental['name'] ?></td>
+                    <td><?= $creditrental['email'] ?></td>
+                    <td><?= $creditPackages[$creditrental['creditPackage'] - 1]["name"]; ?></td>
+                    <td><?= $creditrental['creationDate'] ?></td>
+                    <td><?= $dueDate = date('Y-m-d', strtotime($creditrental['creationDate'] . " + " . ($creditrental['noOfInstallments'] * 15) . " days"));
                             ?></td>
-                        <td>
-                            <?php if ($dueDate > date("Y-m-d")) {
+                    <td>
+                        <?php if ($dueDate > date("Y-m-d")) {
                                 echo "<g-emoji class=\"g-emoji\" alias=\"sun_with_face\" fallback-src=\"https://github.githubassets.com/images/icons/emoji/unicode/1f31e.png\">🌞</g-emoji>";
                             } else {
                                 echo "<g-emoji class=\"g-emoji\" alias=\"zap\" fallback-src=\"https://github.githubassets.com/images/icons/emoji/unicode/26a1.png\">⚡</g-emoji>";;
                             } ?>
-                        </td>
-                        <td id="table-button">
-                            <a href="editcredit?id=<?= $creditrental['id'] ?>"><button>Bearbeiten</button></a>
-                        </td>
-                    </tr>
+                    </td>
+                    <td id="table-button">
+                        <a href="editcredit?id=<?= $creditrental['id'] ?>"><button>Bearbeiten</button></a>
+                    </td>
+                </tr>
                 <?php endforeach; ?>
             </table>
         </div>
@@ -49,6 +59,13 @@
             <a href="addcredit"><button>Kreditverleih hinzufügen</button></a>
         </div>
     </div>
+    <footer>
+        <div class="footer-div">
+            <p class="item">Firma: Kredihay</p>
+            <p class="item">Projektarbeit von Tim Barmettler & Sacha Vogel</p>
+        </div>
+    </footer>
 </body>
+
 
 </html>

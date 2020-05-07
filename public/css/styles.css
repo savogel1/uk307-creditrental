@@ -1,6 +1,20 @@
-html,
-body {
+body,
+html {
+  height: 100%;
+  width: 100%;
   background-color: rgb(170, 170, 170);
+}
+
+footer {
+  height: 15%;
+  width: 100%;
+  align-self: flex-end;
+}
+
+nav {
+  height: 10%;
+  width: 100%;
+  align-self: flex-start;
 }
 
 table {
@@ -45,12 +59,10 @@ button {
 
 .container {
   display: flex;
-  height: 100%;
-  margin-bottom: 0;
-  padding: 20% 5%;
-  padding-top: 0%;
+  height: 75%;
+  padding: 3%;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   background-color: white;
@@ -58,4 +70,42 @@ button {
 
 .item {
   align-self: auto;
+  color: black;
+}
+
+.input-button {
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(219, 219, 219);
+}
+
+.footer-div {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(230, 230, 230);
+  padding: 3%;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-div {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(230, 230, 230);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#current-tab {
+  text-decoration: underline;
 }

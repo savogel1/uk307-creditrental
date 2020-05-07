@@ -10,6 +10,16 @@
 </head>
 
 <body>
+
+    <nav>
+        <div class="nav-div">
+            <div class="nav-menu">
+                <a class="item" href="credits">Übersicht</a>
+                <a id="current-tab" class="item" href="addcredit">Hinzufügen</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <div id="title" class="item">
             <h1 id="inline-header">Kreditverleih erfassen</h1>
@@ -51,7 +61,6 @@
                     <label for="creditPackage">Kreditpaket*</label>
                     <select name="creditPackage" id="creditPackage" required>
                         <?php foreach ($creditPackages as $nr => $creditPackage) {
-                    var_dump($nr);
                     echo "<option value='" . $creditPackage['id'] . "'>" . $creditPackage['name'] . "</option>";
                 }
                 ?>
@@ -64,6 +73,12 @@
             </form>
         </div>
     </div>
+    <footer>
+        <div class="footer-div">
+            <p class="item">Firma: Kredihay</p>
+            <p class="item">Projektarbeit von Tim Barmettler & Sacha Vogel</p>
+        </div>
+    </footer>
 </body>
 
 </html>

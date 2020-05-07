@@ -9,6 +9,16 @@
 </head>
 
 <body>
+
+    <nav>
+        <div class="nav-div">
+            <div class="nav-menu">
+                <a class="item" href="credits">Übersicht</a>
+                <a class="item" href="addcredit">Hinzufügen</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <div id="title" class="item">
             <h1 id="inline-header">Kreditverleih bearbeiten</h1>
@@ -46,12 +56,16 @@
                         <option value="1">Das Geld wurde vollständig zurückbezahlt.</option>
                     </select>
                 </fieldset>
-                <input type="submit" value="Ändern">
+                <input class="input-button" type="submit" value="Ändern">
             </form>
-            <!-- <br>
-            <a href="credits"><button>Abbrechen</button></a> -->
         </div>
     </div>
+    <footer>
+        <div class="footer-div">
+            <p class="item">Firma: Kredihay</p>
+            <p class="item">Projektarbeit von Tim Barmettler & Sacha Vogel</p>
+        </div>
+    </footer>
 </body>
 
 </html>
