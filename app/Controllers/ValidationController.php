@@ -1,4 +1,4 @@
-<?
+<?php
 $errors = [];
 foreach ($requiredFields as $description => $field) {
     if ($description == "") {
